@@ -4,6 +4,8 @@ export CATALINA_BASE=/var/lib/tomcat7
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib
 export LD_LIBRARY_PATH
 
+mkdir /certs
+
 # Set up our solr certs
 if [ ! -f "/certs/solr.pem" ]; then
   openssl genrsa -out /certs/solr.key 2048 && \

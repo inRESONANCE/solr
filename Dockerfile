@@ -17,6 +17,11 @@ RUN \
 COPY ./start.sh /start.sh
 COPY ./index /usr/share/solr/web/index
 
+RUN mkdir -p /src/config
+
+COPY solr /src/config/solr
+COPY tomcat /src/config/tomcat
+
 # Allow us to edit some config on the outsite
 RUN \
   chmod 755 /start.sh && \
